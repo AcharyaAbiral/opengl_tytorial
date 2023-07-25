@@ -37,6 +37,12 @@
     <None Include="fshader.fs">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="shader.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="shader.fs">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Image.jpg">

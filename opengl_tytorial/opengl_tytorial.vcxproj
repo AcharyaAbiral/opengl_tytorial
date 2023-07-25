@@ -142,6 +142,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fshader.fs" />
+    <None Include="shader.fs" />
+    <None Include="shader.vs" />
     <None Include="vshader.vs" />
   </ItemGroup>
   <ItemGroup>
