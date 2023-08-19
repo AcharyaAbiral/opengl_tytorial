@@ -1,6 +1,6 @@
 #include "shader.h"
 
-Shader::Shader(const char*vertexPath,const char*fragmentPath)
+Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
 	std::string vertexCode;
 	std::string fragmentCode;
@@ -10,7 +10,7 @@ Shader::Shader(const char*vertexPath,const char*fragmentPath)
 	//for exceptions
 	vShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 	fShaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-	try 
+	try
 	{
 		vShaderFile.open(vertexPath);
 		fShaderFile.open(fragmentPath);
@@ -24,10 +24,14 @@ Shader::Shader(const char*vertexPath,const char*fragmentPath)
 		fShaderFile.close();
 
 		vertexCode = vShaderStream.str();
+		
+
 		fragmentCode = fShaderStream.str();
+		
+
 	}
 
-	catch(std::ifstream::failure e)
+	catch (std::ifstream::failure e)
 	{
 		std::cout << "ERROR::SHADER::FILE_NOT_SUCCESSFULLY_READ" << std::endl;
 	}
@@ -44,7 +48,7 @@ Shader::Shader(const char*vertexPath,const char*fragmentPath)
 	char infoLog[512];
 
 	vertex = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertex, 1, &vShaderCode,  NULL);
+	glShaderSource(vertex, 1, &vShaderCode, NULL);
 	glCompileShader(vertex);
 
 	glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
@@ -69,7 +73,7 @@ Shader::Shader(const char*vertexPath,const char*fragmentPath)
 	glAttachShader(ID, fragment);
 	glLinkProgram(ID);
 
-	glGetProgramiv(ID,GL_LINK_STATUS, &success);
+	glGetProgramiv(ID, GL_LINK_STATUS, &success);
 	if (!success)
 	{
 		glGetShaderInfoLog(ID, 512, NULL, infoLog);
@@ -78,6 +82,7 @@ Shader::Shader(const char*vertexPath,const char*fragmentPath)
 	glDeleteShader(vertex);
 	glDeleteShader(fragment);
 }
+
 
 void Shader::use()
 {
@@ -99,7 +104,7 @@ void Shader::setFloat(const std::string& name, float value) const
 
 void Shader::setMat4(const std::string& name, glm::mat4& value)const
 {
-	glUniformMatrix4fv(glGetUniformLocation(ID,name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
+	glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, glm::value_ptr(value));
 
 }
 

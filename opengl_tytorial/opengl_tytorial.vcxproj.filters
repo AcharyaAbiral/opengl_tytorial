@@ -29,6 +29,12 @@
     <ClInclude Include="shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="vshader.vs">
@@ -37,19 +43,16 @@
     <None Include="fshader.fs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="shader.vs">
+    <None Include="skybox.fs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="shader.fs">
+    <None Include="skybox.vs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Image.jpg">
+    <ResourceCompile Include="opengl_tytorial.rc">
       <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="th.jpg">
-      <Filter>Source Files</Filter>
-    </Image>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -138,17 +138,18 @@
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="shader.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fshader.fs" />
-    <None Include="shader.fs" />
-    <None Include="shader.vs" />
+    <None Include="skybox.fs" />
+    <None Include="skybox.vs" />
     <None Include="vshader.vs" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Image.jpg" />
-    <Image Include="th.jpg" />
+    <ResourceCompile Include="opengl_tytorial.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
